@@ -13,3 +13,16 @@ output "controlplane_2_volume" {
 output "controlplane_3_volume" {
   value = libvirt_volume.okd_controlplane_3
 }
+
+
+output "master_1_volume" {
+  value = libvirt_volume.okd_master_1
+}
+
+output "master_2_volume" {
+  value = libvirt_volume.okd_master_2
+}
+
+output "master_3_volume" {
+  value = libvirt_volume.okd_master_3
+}
