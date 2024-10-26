@@ -8,10 +8,14 @@ When using okd, make sure to download the openshift tools for okd. The redhat pr
 ## vm's
 |hostname           |cpu's |memory (mib) |ip address    |
 |-------------------|------|-------------|--------------|
-|okd-bootstrap      |4     |15260        |192.168.150.3 |
-|okd-controlplane-1 |4     |15260        |192.168.150.10|
-|okd-controlplane-2 |4     |15260        |192.168.150.11|
-|okd-controlplane-3 |4     |15260        |192.168.150.12|
+|okd-bootstrap      |4     |15260        |10.17.3.0.3 |
+|okd-controlplane-1 |4     |15260        |10.17.3.0.10|
+|okd-controlplane-2 |4     |15260        |10.17.3.0.11|
+|okd-controlplane-3 |4     |15260        |10.17.3.0.12|
+|worker-1 |4     |15260        |10.17.3.0.13|
+|worker-2 |4     |15260        |10.17.3.0.14|
+|worker-3 |4     |15260        |10.17.3.0.15|
+
 
 ## cluster
 |name |domain  |url                                                  |
