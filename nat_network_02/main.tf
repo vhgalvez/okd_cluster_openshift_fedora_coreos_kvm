@@ -1,3 +1,4 @@
+# nat_network_02\main.tf
 module "network" {
   source         = "./modules/network"
   bootstrap      = var.bootstrap
@@ -21,10 +22,6 @@ module "volumes" {
   worker_3_volume_size       = var.worker_3.volume_size
 }
 
-module "ignition" {
-  source = "./modules/ignition"
-}
-
 module "domain" {
   source     = "./modules/domain"
   network_id = module.network.cluster_okd_network.id
@@ -37,6 +34,11 @@ module "domain" {
   controlplane_3_volume_id = module.volumes.controlplane_3_volume.id
   master_ignition_id       = module.ignition.master_ignition.id
 
+  worker_ignition_id = module.ignition.worker_ignition.id
+  worker_1_volume_id = module.volumes.worker_1_volume.id
+  worker_2_volume_id = module.volumes.worker_2_volume.id
+  worker_3_volume_id = module.volumes.worker_3_volume.id
+
   bootstrap      = var.bootstrap
   controlplane_1 = var.controlplane_1
   controlplane_2 = var.controlplane_2
@@ -45,10 +47,6 @@ module "domain" {
   worker_1 = var.worker_1
   worker_2 = var.worker_2
   worker_3 = var.worker_3
-
-  # depends_on = [
-  #   module.network,
-  #   module.volumes
-  # ]
 }
+
 
