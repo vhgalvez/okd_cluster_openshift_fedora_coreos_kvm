@@ -1,5 +1,8 @@
-resource "libvirt_network" "cluster_okd_network" {
-  name      = "cluster_okd_network"
+
+#nat_network_02\modules\network\main.tf cluster_okd_network
+
+resource "libvirt_network" "nat_network_02" {
+  name      = "nat_network_02"
   mode      = "nat"
   domain    = "okd.lab"
   addresses = ["10.17.3.0/24"]

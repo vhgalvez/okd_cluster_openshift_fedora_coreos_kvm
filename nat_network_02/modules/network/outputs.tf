@@ -1,3 +1,3 @@
-output "cluster_okd_network" {
-  value = libvirt_network.cluster_okd_network
+output "nat_network_02" {
+  value = libvirt_network.nat_network_02
 }
