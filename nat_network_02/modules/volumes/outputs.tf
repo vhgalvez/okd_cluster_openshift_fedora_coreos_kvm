@@ -1,30 +1,17 @@
 output "bootstrap_volume" {
-  value = libvirt_volume.okd_bootstrap
+  value = libvirt_volume.okd_bootstrap.id
 }
 
 output "controlplane_1_volume" {
-  value = libvirt_volume.okd_controlplane_1
+  value = libvirt_volume.okd_controlplane_1.id
 }
 
 output "controlplane_2_volume" {
-  value = libvirt_volume.okd_controlplane_2
+  value = libvirt_volume.okd_controlplane_2.id
 }
 
 output "controlplane_3_volume" {
-  value = libvirt_volume.okd_controlplane_3
-}
-
-
-output "master_1_volume" {
-  value = libvirt_volume.okd_master_1
-}
-
-output "master_2_volume" {
-  value = libvirt_volume.okd_master_2
-}
-
-output "master_3_volume" {
-  value = libvirt_volume.okd_master_3
+  value = libvirt_volume.okd_controlplane_3.id
 }
 
 output "worker_1_volume" {

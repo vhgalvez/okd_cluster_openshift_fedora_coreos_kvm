@@ -1,12 +1,6 @@
 # modules/volumes/main.tf
 # Definición del volumen base de Fedora CoreOS
-resource "libvirt_volume" "fedora_coreos" {
-  name   = "fedora_coreos.qcow2"
-  pool   = "default"
-  source = var.coreos_image
-}
 
-# Volumen del nodo Bootstrap
 resource "libvirt_volume" "okd_bootstrap" {
   name           = "okd_bootstrap.qcow2"
   pool           = "default"
@@ -14,7 +8,6 @@ resource "libvirt_volume" "okd_bootstrap" {
   base_volume_id = libvirt_volume.fedora_coreos.id
 }
 
-# Volúmenes de los nodos de Control Plane
 resource "libvirt_volume" "okd_controlplane_1" {
   name           = "okd_controlplane_1.qcow2"
   pool           = "default"
@@ -36,7 +29,6 @@ resource "libvirt_volume" "okd_controlplane_3" {
   base_volume_id = libvirt_volume.fedora_coreos.id
 }
 
-# Volúmenes de los nodos Worker
 resource "libvirt_volume" "worker_1_volume" {
   name           = "okd_worker_1.qcow2"
   pool           = "default"
