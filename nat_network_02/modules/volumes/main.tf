@@ -1,6 +1,14 @@
 # modules/volumes/main.tf
 # Definición del volumen base de Fedora CoreOS
 
+
+resource "libvirt_volume" "fedora_coreos" {
+  name   = "fedora_coreos.qcow2"
+  pool   = "default"
+  source = var.coreos_image
+}
+
+
 resource "libvirt_volume" "okd_bootstrap" {
   name           = "okd_bootstrap.qcow2"
   pool           = "default"
