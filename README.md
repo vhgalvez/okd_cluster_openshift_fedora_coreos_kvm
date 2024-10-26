@@ -29,11 +29,15 @@ Do these steps before opening the project in a devcontainer.
 - Download openshift-install and extract it into `./.devcontainer/tools`[^3][^4] (create the folder if it doesn't exist)
 - Setup dnsmasq so everything can be resolved
     ```bash
-    address=/okd.lab/192.168.150.3    # bootstrap
-    address=/okd.lab/192.168.150.10   # controlplane 1 
-    address=/okd.lab/192.168.150.11   # controlplane 2
-    address=/okd.lab/192.168.150.12   # controlplane 3
+    address=/okd.lab/10.17.3.0.3   # bootstrap
+    address=/okd.lab/10.17.3.0.10   # controlplane 1 
+    address=/okd.lab/10.17.3.0.11  # controlplane 2
+    address=/okd.lab/10.17.3.0.12  # controlplane 3
+    address=/okd.lab/10.17.3.0.13  # worker 1
+    address=/okd.lab/10.17.3.0.14  # worker 2
+    address=/okd.lab/10.17.3.0.15  # worker 3
     ```
+
 - RedHat pull secret[^5]
 - Copy [install-config.yaml.template](install-config.yaml.template) to [install-config.yaml](install-config.yaml) and fill in the required values. The install-config.yaml file is used to generate the ignition files[^6].
 
@@ -79,3 +83,18 @@ Following steps can be done within the devcontainer.
 [^4]: https://amd64.origin.releases.ci.openshift.org/
 [^5]: https://console.redhat.com/openshift/downloads
 [^6]: https://docs.openshift.com/container-platform/4.13/installing/installing_platform_agnostic/installing-platform-agnostic.html#installation-initializing-manual_installing-platform-agnostic
+
+
+
+
+
+
+# Cambiar el propietario y grupo de todos los archivos en el directorio /home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs
+sudo chown -R victory:victory /home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs
+sudo chmod -R 775 /home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs
+
+# Asegurar permisos de escritura en los archivos dentro del directorio ignition_configs
+sudo chmod -R u+w /home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs
+
+
+openshift-install create ignition-configs --dir=/home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs --log-level=debug
