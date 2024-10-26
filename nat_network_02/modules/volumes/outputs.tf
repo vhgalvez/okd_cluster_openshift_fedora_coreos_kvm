@@ -1,3 +1,4 @@
+# nat_network_02\modules\volumes\outputs.tf
 output "bootstrap_volume" {
   value = libvirt_volume.okd_bootstrap.id
 }
