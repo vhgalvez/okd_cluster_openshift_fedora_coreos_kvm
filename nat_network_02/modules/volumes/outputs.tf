@@ -26,3 +26,15 @@ output "master_2_volume" {
 output "master_3_volume" {
   value = libvirt_volume.okd_master_3
 }
+
+output "worker_1_volume" {
+  value = libvirt_volume.worker_1_volume.id
+}
+
+output "worker_2_volume" {
+  value = libvirt_volume.worker_2_volume.id
+}
+
+output "worker_3_volume" {
+  value = libvirt_volume.worker_3_volume.id
+}
