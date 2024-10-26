@@ -10,7 +10,7 @@ resource "libvirt_ignition" "master_ignition" {
   content = "/home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs/master.ign"
 }
 
-resource "libvirt_ignition" "master_ignition" {
+resource "libvirt_ignition" "worker_ignition" {
   name    = "okd_worker.ign"
   pool    = "default"
   content = "//home/victory/okd_cluster_openshift_fedora_coreos_kvm/nat_network_02/ignition_configs/worker.ign"
