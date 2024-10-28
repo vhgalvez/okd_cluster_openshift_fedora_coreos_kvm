@@ -122,3 +122,24 @@ sudo nano /etc/resolv.conf
 search okd.lab
 nameserver 192.168.0.18
 nameserver 10.17.3.1
+
+
+
+sudo cat /etc/dnsmasq.conf
+
+sudo systemctl status dnsmasq
+sudo systemctl restart dnsmasq
+
+
+sudo virsh list
+
+sudo virsh shutdown okd-controlplane-1
+sudo virsh shutdown okd-controlplane-2
+sudo virsh shutdown okd-controlplane-3
+sudo virsh shutdown okd-bootstrap
+
+sudo virsh start okd-controlplane-1
+sudo virsh start okd-controlplane-2
+sudo virsh start okd-controlplane-3
+sudo virsh start okd-bootstrap
+sudo virsh net-start kube_network_02
