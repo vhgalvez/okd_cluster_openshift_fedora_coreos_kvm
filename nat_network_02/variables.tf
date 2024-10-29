@@ -12,7 +12,7 @@ variable "bootstrap" {
     description = "okd bootstrap vm"
     vcpu        = 2
     memory      = 4  # GiB
-    volume_size = 50 # GiB
+    volume_size = 40 # GiB
     address     = "10.17.3.3"
     mac         = "AA:BB:CC:10:00:00"
   }

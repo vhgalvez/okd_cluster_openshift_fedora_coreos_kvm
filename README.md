@@ -29,13 +29,14 @@ Do these steps before opening the project in a devcontainer.
 - Download openshift-install and extract it into `./.devcontainer/tools`[^3][^4] (create the folder if it doesn't exist)
 - Setup dnsmasq so everything can be resolved
     ```bash
-    address=/okd.lab/10.17.3.0.3   # bootstrap
-    address=/okd.lab/10.17.3.0.10   # controlplane 1 
-    address=/okd.lab/10.17.3.0.11  # controlplane 2
-    address=/okd.lab/10.17.3.0.12  # controlplane 3
-    address=/okd.lab/10.17.3.0.13  # worker 1
-    address=/okd.lab/10.17.3.0.14  # worker 2
-    address=/okd.lab/10.17.3.0.15  # worker 3
+address=/okd.lab/10.17.3.3   # bootstrap
+address=/okd.lab/10.17.3.10  # controlplane 1
+address=/okd.lab/10.17.3.11  # controlplane 2
+address=/okd.lab/10.17.3.12  # controlplane 3
+address=/okd.lab/10.17.3.13  # worker 1
+address=/okd.lab/10.17.3.14  # worker 2
+address=/okd.lab/10.17.3.15  # worker 3
+
     ```
 
 - RedHat pull secret[^5]
